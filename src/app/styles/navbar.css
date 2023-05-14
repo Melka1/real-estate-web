@@ -1,0 +1,32 @@
+.navbar {
+  display: flex;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(11px);
+  justify-content: space-between;
+  padding: 1rem 5rem;
+  align-items: center;
+  color: white;
+  position: fixed;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  gap: 1rem;
+}
+
+.logo h1 {
+  font-family: var(--font-text)
+}
+.links ul {
+  display: flex;
+  gap: 1rem;
+}
+
+.links ul li {
+  list-style: none;
+  font-family: var(--font-text);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+}

@@ -1,0 +1,5 @@
+export {default as Image1} from '../../../public/Imagw 1.png'
+export {default as Image2} from '../../../public/Image 2.png'
+export {default as Image3} from '../../../public/Image 3.png'
+export {default as Image4} from '../../../public/Image 4.png'
+export {default as Image5} from '../../../public/Image 5.png'

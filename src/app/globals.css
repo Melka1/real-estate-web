@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap');
+
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -8,6 +12,9 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  --font-text:'Montserrat', sans-serif;
+  --font-title:'Playfair Display', sans-serif;
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
@@ -86,13 +93,8 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  /* color: white;
+  background: black; */
 }
 
 a {
@@ -104,4 +106,28 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.section--padding {
+  padding: 2rem 5rem;
+}
+
+.heading1 {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 60px;
+
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: #7F57F1;
+}
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
 }
