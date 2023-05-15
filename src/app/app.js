@@ -1,5 +1,5 @@
 import React from 'react'
-import {Team, Testimonial, FeaturedProps, Footer, NavBar, OurFeatures, LandingPage, CTA} from './components'
+import {Team, Testimonial, FeaturedProps, Footer, NavBar, OurFeatures, LandingPage, CTA, RecentProps} from './components'
 
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
       <LandingPage/>
       <FeaturedProps/>
       <OurFeatures/>
+      <RecentProps/>
       <Team/>
       <Testimonial/>
       <CTA/>
