@@ -92,10 +92,10 @@ body {
   overflow-x: hidden;
 }
 
-body {
-  /* color: white;
-  background: black; */
-}
+/* body {
+  color: white;
+  background: black;
+} */
 
 a {
   color: inherit;
@@ -109,7 +109,7 @@ a {
 }
 
 .section--padding {
-  padding: 2rem 5rem;
+  padding: 5rem 5rem;
 }
 
 .heading1 {
@@ -130,4 +130,15 @@ a {
 
 .left {
   text-align: left;
+}
+
+.heading2 {
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.02em;
+  font-feature-settings: 'liga' off;
+
+  color: #2F234F;
 }
