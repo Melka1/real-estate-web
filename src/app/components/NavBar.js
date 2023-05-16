@@ -14,11 +14,11 @@ function NavBar() {
 
       <div className="links">
         <ul>
-          <li><Link href={'/'}>Home</Link></li>
-          <li><Link href={'/'}>About</Link></li>
-          <li><Link href={'/'}>Property</Link></li>
-          <li><Link href={'/'}>Blog</Link></li>
-          <li><Link href={'/'}>Contact</Link></li>
+          <li><Link href={'/'}>Home</Link><div/></li>
+          <li><Link href={'/'}>About</Link><div/></li>
+          <li><Link href={'/'}>Property</Link><div/></li>
+          <li><Link href={'/'}>Blog</Link><div/></li>
+          <li><Link href={'/'}>Contact</Link><div/></li>
         </ul>
       </div>
     </div>

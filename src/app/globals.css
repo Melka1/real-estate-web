@@ -84,6 +84,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 html,
@@ -110,6 +111,12 @@ a {
 
 .section--padding {
   padding: 5rem 5rem;
+}
+
+.section--padding>* {
+  max-width: 1440px;
+  margin: auto;
+
 }
 
 .heading1 {
@@ -142,3 +149,4 @@ a {
 
   color: #2F234F;
 }
+

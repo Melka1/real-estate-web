@@ -1,3 +1,10 @@
+.recent--properties {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 .recent--prop {
   display: flex;
   gap: 32px;
@@ -11,12 +18,14 @@
   display: flex;
   flex-direction: column;
   gap:32px;
+ 
 }
 
 .recent--prop--desc--container {
   padding: 43px;
   display: flex;
   flex-direction: column;
+  background: #F6F3FF;
 }
 
 .recent--prop--desc--title {
@@ -73,4 +82,24 @@
 .recent--prop:nth-child(2n) .recent--prop--desc--title{
   color: #2F234F;
   ;
+}
+
+.recent--props--view {
+  border: 1px solid #7F57F1;
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-family: var(--font-text);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  margin: auto;
+  color: #7F57F1;
+  background: transparent;
+  cursor: pointer;
+  margin-top: 68px;
+}
+
+.recent--props--view:hover {
+  background: #F6F3FF;
+  border-color: #2F234F;
 }

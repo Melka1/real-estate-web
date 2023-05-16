@@ -5,7 +5,7 @@ import '../styles/recent.css'
 
 function RecentProps() {
   return (
-    <div className='section--padding'>
+    <div className='section--padding recent--properties'>
       <h1 className='heading1'>Recent Properties</h1>
       <p className='center subtitle'>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
       <div className='recent--props--container'>
@@ -33,6 +33,7 @@ function RecentProps() {
           </div>
         </div>
       </div>
+      <button type='button' className='recent--props--view'>View More</button>
     </div>
   )
 }
