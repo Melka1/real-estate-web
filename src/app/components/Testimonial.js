@@ -8,8 +8,8 @@ import '../styles/testimonials.css'
 let style1={}, style2={}, style3={};
 
 const style = {
-  'background-color': '#7F57F1',
-  'transform': 'scale(1.5)'
+  backgrounColor: '#7F57F1',
+  transform: 'scale(1.5)'
 }
 
 function Testimonial() {
