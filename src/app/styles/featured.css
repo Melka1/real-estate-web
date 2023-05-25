@@ -20,6 +20,13 @@
   border-radius: 8px;
 }
 
+.feature img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+
+}
+
 .feature--desc {
   position: absolute;
   top: 0;
@@ -41,19 +48,23 @@
 }
 
 .feature::before {
-  display: none;
+  display: block;
   content: "";
   width: 100%;
   height: 100%;
   position: absolute;
+  opacity: 0;
   top: 0;
   left: 0;
   background: rgba(0,0,0,0.6);
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
   /* z-index: 3; */
 }
 
 .feature:hover::before {
-  display: block;
+  /* display: block; */
+  opacity: 1;
 }
 
 .feature--container {

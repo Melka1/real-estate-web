@@ -23,7 +23,7 @@ export default function RangeSlider({setValue, value}) {
     setValue(newValue);
   };
 
-  document.getElementsByClassName('MuiSlider-markLabel')[0]?.classList.add("move")
+  document?.getElementsByClassName('MuiSlider-markLabel')[0]?.classList.add("move")
 
   return (
     <Box sx={{ width: 300 }}>

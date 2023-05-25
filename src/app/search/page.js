@@ -3,7 +3,7 @@ import './search.css'
 import SearchNavRar from '../containers/search/navbar/navbar'
 import Header from '../containers/search/header/header'
 import {Filter} from '../containers/search/filter/filter'
-import List from '../containers/search/list/list'
+import {List} from '../containers/search/list/list'
 
 function page() {
   return (
