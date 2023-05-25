@@ -15,10 +15,10 @@ function NavBar() {
       <div className="links">
         <ul>
           <li><Link href={'/'}>Home</Link><div/></li>
-          <li><Link href={'/'}>About</Link><div/></li>
-          <li><Link href={'/'}>Property</Link><div/></li>
-          <li><Link href={'/'}>Blog</Link><div/></li>
-          <li><Link href={'/'}>Contact</Link><div/></li>
+          <li><Link href={'#testimonials'}>About</Link><div/></li>
+          <li><Link href={'#recent--props'}>Property</Link><div/></li>
+          <li><Link href={'/search'}>Search</Link><div/></li>
+          <li><Link href={'#cta'}>Contact</Link><div/></li>
         </ul>
       </div>
     </div>

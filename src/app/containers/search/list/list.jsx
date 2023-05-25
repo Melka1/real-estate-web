@@ -11,7 +11,7 @@ function List() {
     <div className='search--list--display'>
       <p className="search--list--title">398 Results <span>in Scotland</span></p>
       <div className="search--lists">
-        <Link href={'/'}>
+        <Link href={'/property/1'}>
           <div className="search--list">
             <Image src={Prop5} alt=''/>
             <div className="prop--desc">
@@ -29,7 +29,7 @@ function List() {
           </div>
         </Link>
 
-        <Link href={'/'}>
+        <Link href={'/property/2'}>
           <div className="search--list">
             <Image src={Prop6} alt=''/>
             <div className="prop--desc">
@@ -47,7 +47,7 @@ function List() {
           </div>
         </Link>
 
-        <Link href={'/'}>
+        <Link href={'/property/2'}>
           <div className="search--list">
             <Image src={Prop7} alt=''/>
             <div className="prop--desc">
@@ -65,7 +65,7 @@ function List() {
           </div>
         </Link>
 
-        <Link href={'/'}>
+        <Link href={'/property/2'}>
           <div className="search--list">
             <Image src={Prop8} alt=''/>
             <div className="prop--desc">
@@ -83,7 +83,7 @@ function List() {
           </div>
         </Link>
 
-        <Link href={'/'}>
+        <Link href={'/property/2'}>
           <div className="search--list">
             <Image src={Prop9} alt=''/>
             <div className="prop--desc">
@@ -101,7 +101,7 @@ function List() {
           </div>
         </Link>
 
-        <Link href={'/'}>
+        <Link href={'/property/1'}>
           <div className="search--list">
             <Image src={Prop10} alt=''/>
             <div className="prop--desc">

@@ -3,7 +3,7 @@ import '../styles/cta.css'
 
 function CTA() {
   return (
-    <div className='section--padding cta--container'>
+    <div id='cta' className='section--padding cta--container'>
       <div className='cta'>
         <h1 className="cta--header">Don&apos;t Miss A thing!</h1>
         <p className='cta--subheader'>Subscribe with Email and loads of interesting news will be sent to you on a daily basis.</p>

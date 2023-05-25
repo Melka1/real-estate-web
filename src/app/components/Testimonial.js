@@ -50,7 +50,7 @@ function Testimonial() {
   }
 
   return (
-    <div className='section--padding'>
+    <div id='testimonials' className='section--padding'>
       <h1 className='heading1'>our clients speak</h1>
       <p className='subtitle center'>We have been working with clients around the world</p>
       <div id='slide' className='comments' ref={scrollRef}>
