@@ -1,18 +1,18 @@
 'use client'
 
-import { NavBar } from '@/app/components'
+import { CTA, Footer, NavBar } from '@/app/components'
 import React, { useState } from 'react'
 import Link from 'next/link'
 import Map from '@/app/assets/map'
 import './property.css'
 import { IoBed, IoChevronDown, IoClose, IoEllipsisHorizontal, IoExpand, IoSearch, IoShare } from 'react-icons/io5'
-import { BsMessenger, BsPinMap, BsSearch, BsShare } from 'react-icons/bs'
+import { BsArrowLeft, BsMessenger, BsPinMap, BsSearch, BsShare } from 'react-icons/bs'
 import {BiBath, BiCar} from 'react-icons/bi'
 import { MdBed } from 'react-icons/md'
 import {SlLocationPin} from 'react-icons/sl'
-import {AiOutlineHeart} from 'react-icons/ai'
+import {AiOutlineHeart, AiOutlineLeft, AiOutlineRight} from 'react-icons/ai'
 import Image from 'next/image'
-import { Prop5, Prop6, Prop7, Prop8, Prop9 } from '@/app/assets/images'
+import { Prop10, Prop5, Prop6, Prop7, Prop8, Prop9, Prop11, Prop12 } from '@/app/assets/images'
 
 
 const properties = [{
@@ -43,8 +43,28 @@ export async function getStaticPaths(){
 
 function Page({}) {
   const [imageIndex, setImageIndex] = useState(0)
+  const [translate, setTranslate] = useState(0)
+
+  function handleScrollLeft(){
+    if(translate==0)return
+    if(translate<160){
+      setTranslate(0)
+    } else {
+      setTranslate(prev=>prev-160)
+    }
+  }
+
+  function handleScrollRight(){
+    if(translate==532)return
+    if(translate>372){
+      setTranslate(532)
+    } else {
+      setTranslate(prev=>prev+160)
+    }
+  }
 
   return (
+    <>
     <div className='property--landing--page'>
       <NavBar/>
       <Map/>
@@ -100,7 +120,7 @@ function Page({}) {
               <span><MdBed/><p>2</p></span>
               <span><BiBath/><p>1</p></span>
               <span><BiCar/><p>1</p></span>
-              <span><IoExpand/><p>1250sq ft</p></span>
+              <span><IoExpand/><p className='area'>60m</p></span>
             </div>
             <p className='property--description--content'>
               Located on the plateou central and close to all amenities, the location of this apartment on the first floor of  a downtown bulding will be ideal  for your... <Link href={'/'}>see details</Link>
@@ -119,6 +139,107 @@ function Page({}) {
         </div>
       </div>
     </div>
+    {/* <div className='property--details'></div> */}
+    <div className='other--properties'>
+      <div style={{transform:`translateX(-${translate}px)`}} className='props'>
+        <Link className='the--prop' href={'/property/2'}>
+          <Image src={Prop10} alt='other properties'/>
+          <div className='property--specs'>
+            <div className='spec--container'>
+              <p className='cost'>$55<span>/night</span></p>
+              <p className='location'>3517 W.Gray St. Utica</p>
+              <div className='features'>
+                <span><MdBed/><p>2</p></span>
+                <span><BiBath/><p>1</p></span>
+                <span><IoExpand/><p className='area'>105m</p></span>
+              </div>
+            </div>
+            <button className='like'><AiOutlineHeart/></button>
+          </div>
+        </Link>
+        <Link className='the--prop' href={'/property/2'}>
+          <Image src={Prop11} alt='other properties'/>
+          <div className='property--specs'>
+            <div className='spec--container'>
+              <p className='cost'>$85<span>/night</span></p>
+              <p className='location'>3517 W.Gray St. Utica</p>
+              <div className='features'>
+                <span><MdBed/><p>2</p></span>
+                <span><BiBath/><p>1</p></span>
+                <span><IoExpand/><p className='area'>180m</p></span>
+              </div>
+            </div>
+            <button className='like'><AiOutlineHeart/></button>
+          </div>
+        </Link>
+        <Link className='the--prop' href={'/property/2'}>
+          <Image src={Prop12} alt='other properties'/>
+          <div className='property--specs'>
+            <div className='spec--container'>
+              <p className='cost'>$75<span>/night</span></p>
+              <p className='location'>3517 W.Gray St. Utica</p>
+              <div className='features'>
+                <span><MdBed/><p>2</p></span>
+                <span><BiBath/><p>1</p></span>
+                <span><IoExpand/><p className='area'>95m</p></span>
+              </div>
+            </div>
+            <button className='like'><AiOutlineHeart/></button>
+          </div>
+        </Link>
+        <Link className='the--prop' href={'/property/2'}>
+          <Image src={Prop9} alt='other properties'/>
+          <div className='property--specs'>
+            <div className='spec--container'>
+              <p className='cost'>$105<span>/night</span></p>
+              <p className='location'>3517 W.Gray St. Utica</p>
+              <div className='features'>
+                <span><MdBed/><p>2</p></span>
+                <span><BiBath/><p>1</p></span>
+                <span><IoExpand/><p className='area'>120m</p></span>
+              </div>
+            </div>
+            <button className='like'><AiOutlineHeart/></button>
+          </div>
+        </Link>
+        <Link className='the--prop' href={'/property/2'}>
+          <Image src={Prop8} alt='other properties'/>
+          <div className='property--specs'>
+            <div className='spec--container'>
+              <p className='cost'>$60<span>/night</span></p>
+              <p className='location'>3517 W.Gray St. Utica</p>
+              <div className='features'>
+                <span><MdBed/><p>2</p></span>
+                <span><BiBath/><p>1</p></span>
+                <span><IoExpand/><p className='area'>60m</p></span>
+              </div>
+            </div>
+            <button className='like'><AiOutlineHeart/></button>
+          </div>
+        </Link>
+        <Link className='the--prop' href={'/property/2'}>
+          <Image src={Prop7} alt='other properties'/>
+          <div className='property--specs'>
+            <div className='spec--container'>
+              <p className='cost'>$40<span>/night</span></p>
+              <p className='location'>3517 W.Gray St. Utica</p>
+              <div className='features'>
+                <span><MdBed/><p>2</p></span>
+                <span><BiBath/><p>1</p></span>
+                <span><IoExpand/><p className='area'>54m</p></span>
+              </div>
+            </div>
+            <button className='like'><AiOutlineHeart/></button>
+          </div>
+        </Link>
+
+      </div>
+      <button onClick={handleScrollLeft} className='scroll--left'><AiOutlineLeft/></button>
+      <button onClick={handleScrollRight} className='scroll--right'><AiOutlineRight/></button>
+    </div>
+    {/* <CTA/> */}
+    <Footer />
+    </>
   )
 }
 
