@@ -1,0 +1,172 @@
+.navigation--title {
+  font-family: var(--font-text);
+  font-size: 0.9rem;
+}
+
+.back--button {
+  cursor: pointer;
+}
+
+.back--button:hover {
+  background: rgb(240, 240, 240) !important;
+  color:black;
+}
+
+.progress {
+  border: 1px solid white;
+  border-right: none;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius:25px ;
+  /* padding: 0 0.5rem; */
+  font-family: var(--font-text);
+  font-size: 0.8rem;
+}
+
+.progress>div {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  align-items: center;
+  padding:0.5rem 2rem;
+  /* border-right: 1px solid green; */
+  position: relative;
+}
+
+.arrow {
+  height: 100%;
+  width:'1rem';
+  position: absolute;
+  top:0;
+  right: -14px;
+  transform: scale(3.6);
+}
+
+.navigation--number {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: darkgray !important;
+  background: rgb(240, 240, 240);
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-text);
+}
+
+.draft--control {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.draft--control button {
+  font-family: var(--font-text);
+  font-size: 0.8rem;
+  height: 100%;
+  padding:0 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: blue;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.draft--control button svg {
+  font-size: 1rem;
+}
+
+.draft--control button:first-of-type {
+  background: lightgray;
+  color: black;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  gap:1rem;
+}
+
+.content>div {
+  /* border: 1px solid white; */
+  padding-top: 1rem;
+}
+
+.form {
+  padding: 0.5rem;
+  background: rgb(45, 46, 46);
+  border-radius: 0.5rem;
+}
+
+.content .description--pane {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.content .preview--pane {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+}
+
+.partition h2 {
+  font-family: var(--font-text);
+  font-size: 1rem;
+  font-weight:normal;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 0.7rem;
+  border: 1px solid white;
+  border-radius: 0.25rem;
+}
+
+.input::placeholder{
+  color: white;
+}
+
+.form * {
+  font-size: 0.8rem;
+  font-family: var(--font-text);
+}
+
+.section--title {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.form .unit--information .unit--information--content label {
+  font-size: 0.7rem;
+  line-height: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+hr {
+  border-bottom: none;
+  border-color: lightgray;
+  margin: 0.5rem 0;
+}
+
+.location--detail {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.price--and--duration--content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
