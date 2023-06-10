@@ -1,12 +1,30 @@
-import React from 'react'
+'use client'
+
+import React, {useState} from 'react'
 import Imperative from '../../assets/aiImagePicker'
 import { NavBar } from '@/app/components'
 import InputSelect from '@/app/assets/inputSelect'
-import {AiOutlineLeft, AiOutlineCheck, AiOutlineRight, AiOutlineCloudUpload} from 'react-icons/ai'
+import {AiOutlineLeft, AiOutlineCheck, AiOutlineMinus, AiOutlineCloudUpload, AiOutlinePlus} from 'react-icons/ai'
 import {BsChevronRight} from 'react-icons/bs'
 import './add.css'
+import Checkbox from '@/app/assets/checkbox'
 
 function page() {
+  const [duration, setDuration] = useState(0)
+  const [downPayment, setDownPayment] = useState(0)
+  const [rules, setRules] = useState([
+    "Do not dmage the facilities",
+    "Must pay bill on time",
+    "It is forbidden to carry narcotic and alcohol"
+  ])
+  const [additionalFacilities, setAdditionalFacilities] = useState([
+    "Squat toilet and wipes",
+    "Laundry every week, max 10Kg",
+    "A security guard is provided"
+  ])
+
+  const [addStatus, setAddStatus] = useState([false, false])
+ 
   return (
     <div style={{minHeight:'100vh'}}>
         <NavBar/>
@@ -56,7 +74,7 @@ function page() {
               </button>
             </div>
           </div>
-          <div className='content' style={{padding:'0 5rem'}}>
+          <div className='content' style={{padding:'0 5rem', paddingBottom:'2rem'}}>
             <div className='partition description--pane'>
               <h2>Add Property</h2>
               <div className='form'>
@@ -103,6 +121,78 @@ function page() {
                     <div className='late--charge'>
                       <label htmlFor="late--charge">Late Charge <span>(Optional)</span></label>
                       <InputSelect/>
+                    </div>
+                    <div className='rental--time'>
+                      <label htmlFor="rental--time">Minimum rental time</label>
+                      <div className='rental--time--container'>
+                        <p>Minimun duration <span>(in months)</span></p>
+                        <div className='control--container'>
+                          <button onClick={()=>setDuration(prev=>prev-1)}><AiOutlineMinus/></button>
+                          <p>{duration}</p>
+                          <button onClick={()=>setDuration(prev=>prev+1)}><AiOutlinePlus/></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div className='minimum--down--payment'>
+                      <label htmlFor="minimum--down--payment">Minimum down payment <span>(Optional)</span></label>
+                      <div id='minimum--down--payment' className='minimum--down--payment--input'>
+                        <input onChange={(e)=>setDownPayment(e.target.value)} value={downPayment} type="text"/>
+                        <p>Percent %</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr/>
+                <div className="additional--information">
+                  <p className='additional--information--title section--title'>Additional Information</p>
+                  <div className='additional--information--content'>
+                    <div className='additional--information--content--rules'>
+                      <label htmlFor="rules">Rules</label>
+                      {
+                        rules.map(rule=>(
+                          <Checkbox title={rule}/>
+                        ))
+                      }
+                      <button className='add--rule--and--facility'>
+                        <AiOutlinePlus/>
+                        <p>Add additional rules</p>
+                      </button>
+                      <div className='input--container'>
+                        <input type='text' placeholder='Enter additional rule'/>
+                        <div className='input--controls'>
+                          <button onClick={()=>{}}>
+                            <p>Add</p>
+                          </button>
+                          <button onClick={()=>{}}>
+                            <p>Cancel</p>
+                          </button>
+                        </div>
+                      </div>
+                      
+                    </div>
+                    <div className='additional--information--content--facilities'>
+                      <label htmlFor="additional--facilities">Additional facilities</label>
+                      {
+                        additionalFacilities.map(facility =>(
+                          <Checkbox title={facility}/>
+                        ))
+                      }
+                      <button className='add--rule--and--facility' onClick={()=>{}}>
+                        <AiOutlinePlus/>
+                        <p>Add additional facilities</p>
+                      </button>
+                      <div className='input--container'>
+                        <input type='text' placeholder='Enter additional facility'/>
+                        <div className='input--controls'>
+                          <button onClick={()=>{}}>
+                            <p>Add</p>
+                          </button>
+                          <button onClick={()=>{}}>
+                            <p>Cancel</p>
+                          </button>
+                        </div>
+                      </div>
+
                     </div>
                   </div>
                 </div>

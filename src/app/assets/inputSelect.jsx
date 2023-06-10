@@ -10,7 +10,8 @@ function InputSelect() {
 
   return (
     <div style={styles.container}>
-      <input type="text" onChange={(e)=>setValue(e.target.value)} style={styles.input}/>
+      <p>$</p>
+      <input value={value} type="text" onChange={(e)=>setValue(e.target.value)} style={styles.input}/>
       <div className='partition' style={styles.partition}/>
       <select onChange={(e)=>setType(e.target.value)} style={styles.select}>
         <option style={styles.option} value='per Day'>per Day</option>

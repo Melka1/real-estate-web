@@ -170,3 +170,109 @@ hr {
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
+
+.rental--time--container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rental--time--container .control--container {
+  display: flex;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+  min-width: 120px;
+  overflow: hidden;
+}
+
+.rental--time--container .control--container>* {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  padding: 0.5rem;
+  
+ 
+}
+
+.rental--time--container .control--container p {
+  padding: 0.5rem 1rem;
+  border-width: 0px 1px 0px 1px;
+  border-color: gray;
+  border-style: solid;
+  flex-grow: 1;
+  font-size: 0.9rem;
+  color: lightgray;
+}
+
+.rental--time--container .control--container p span {
+  font-size: 0.7rem;
+  color: gray;
+}
+
+.rental--time--container .control--container button {
+  cursor: pointer; 
+  outline: none;
+  border: none;
+}
+
+.rental--time--container .control--container button:hover {
+  background: rgb(55, 55, 55);
+}
+
+span {
+  color: gray;
+}
+
+.minimum--down--payment--input {
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+.minimum--down--payment--input input {
+  border: none;
+  outline: none;
+  /* flex-grow: 1; */
+  background: transparent;
+}
+
+.minimum--down--payment--input p {
+  min-width: max-content;
+}
+
+.additional--information--content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:1rem;
+}
+
+.input--controls {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:1rem;
+  margin-top: 0.5rem;
+}
+
+.input--controls button {
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.add--rule--and--facility {
+  display: flex;
+  padding: 0.5rem;
+  gap: 1rem;
+  align-items: center;
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.add--rule--and--facility:hover {
+  border-color: lightgray;
+}
