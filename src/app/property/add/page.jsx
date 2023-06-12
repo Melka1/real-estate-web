@@ -4,10 +4,14 @@ import React, {useState, useRef} from 'react'
 import Imperative from '../../assets/aiImagePicker'
 import { NavBar } from '@/app/components'
 import InputSelect from '@/app/assets/inputSelect'
-import {AiOutlineLeft, AiOutlineCheck, AiOutlineMinus, AiOutlineCloudUpload, AiOutlinePlus, AiOutlineArrowLeft, AiOutlineHeart} from 'react-icons/ai'
+import {AiOutlineLeft, AiOutlineCheck, AiOutlineMinus, AiOutlineArrowsAlt, AiOutlineCloudUpload, AiOutlinePlus, AiOutlineArrowLeft, AiOutlineHeart, AiOutlineEllipsis} from 'react-icons/ai'
 import {BsChevronRight} from 'react-icons/bs'
+// import {FaLocation} from 'react-icons/fa'
 import './add.css'
 import Checkbox from '@/app/assets/checkbox'
+import { BiBath } from 'react-icons/bi'
+import { MdBed } from 'react-icons/md'
+import { IoInformationCircleOutline ,IoLocationSharp} from 'react-icons/io5'
 
 function page() {
   const [duration, setDuration] = useState(0)
@@ -246,10 +250,37 @@ function page() {
                   <div className='price--and--like'>
                     <p>$550</p>
                     <div className='like--button'>
-                      <AiOutlineHeartLeft fontSize='1rem'/>
+                      <AiOutlineHeart fontSize='1rem' color='red'/>
+                    </div>
+                  </div>
+                  <p className="name">Grand Citra Mansion</p>
+                  <div className="location--content">
+                    <IoLocationSharp color='white'/>
+                    <p className="location--name">Surabaya, Indonesia</p>
+                  </div>
+                  <hr/>
+                  <div className="property--description--detail">
+                    <div className="area" >
+                      <AiOutlineArrowsAlt color='white' fontSize={16}/>
+                      <p>64 <span>m</span></p>
+                    </div>
+                    <div className="bedroom--counts">
+                      <MdBed color='white' fontSize={16}/>
+                      <p>2</p>
+                    </div>
+                    <div className="bathroom--counts">
+                      <BiBath color='white' fontSize={16}/>
+                      <p>2</p>
+                    </div>
+                    <div className="details">
+                      <AiOutlineEllipsis fontSize={16}/>
                     </div>
                   </div>
                 </div>
+              </div>
+              <div className='preview--notification'>
+                <IoInformationCircleOutline fontSize={16}/>
+                <p>This is the preview when your propery is published</p>
               </div>
             </div>
 
