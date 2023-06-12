@@ -2,11 +2,11 @@
 
 import React, {useState, useRef} from 'react'
 import Imperative from '../../assets/aiImagePicker'
+import Carousel from '../../assets/carousel'
 import { NavBar } from '@/app/components'
 import InputSelect from '@/app/assets/inputSelect'
 import {AiOutlineLeft, AiOutlineCheck, AiOutlineMinus, AiOutlineArrowsAlt, AiOutlineCloudUpload, AiOutlinePlus, AiOutlineArrowLeft, AiOutlineHeart, AiOutlineEllipsis} from 'react-icons/ai'
 import {BsChevronRight} from 'react-icons/bs'
-// import {FaLocation} from 'react-icons/fa'
 import './add.css'
 import Checkbox from '@/app/assets/checkbox'
 import { BiBath } from 'react-icons/bi'
@@ -27,10 +27,12 @@ function page() {
     "A security guard is provided"
   ])
   const [addStatus, setAddStatus] = useState([true, true])
+  const [images, setImages] = useState([])
 
   const input1 = useRef("")
   const input2 = useRef("")
 
+  console.log(images)
 
   function handleAddButton(id){
     let addContent = [...addStatus]
@@ -49,7 +51,7 @@ function page() {
     handleAddButton(id)
 
   }
- 
+
   return (
     <div style={{minHeight:'100vh'}}>
         <NavBar/>
@@ -109,7 +111,7 @@ function page() {
                     <label htmlFor="unit--name">Unit name</label>
                     <input type="text" id='unit--name' placeholder='Enter the name of the property'/>
                     <label htmlFor="unit--images">Unit image</label>
-                    <Imperative />
+                    <Imperative setImages={setImages} images={images}/>
                   </div>
                 </div>
                 <hr/>
@@ -243,8 +245,7 @@ function page() {
               <h2>Quick Preview</h2>
               <div className='preview--container'>
                 <div className='carousel--container'>
-                  //carousel
-                  //tags
+                  {images&&<Carousel images={images}/>}
                 </div>
                 <div className='preview--content--container'>
                   <div className='price--and--like'>
