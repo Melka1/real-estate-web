@@ -3,21 +3,21 @@
 import { height } from '@mui/system'
 import React, {useState} from 'react'
 
-function InputSelect() {
+function InputSelect({setPrimarySelect, primarySelect, secondarySelect, setSecondarySelect}) {
   const [type, setType] = useState('per Month')
-  const [value, setValue] = useState(0)
+  // const [value, setValue] = useState(0)
 
 
   return (
     <div style={styles.container}>
       <p>$</p>
-      <input value={value} type="text" onChange={(e)=>setValue(e.target.value)} style={styles.input}/>
+      <input value={primarySelect} type="text" onChange={(e)=>setPrimarySelect(e.target.value)} style={styles.input}/>
       <div className='partition' style={styles.partition}/>
-      <select onChange={(e)=>setType(e.target.value)} style={styles.select}>
-        <option style={styles.option} value='per Day'>per Day</option>
-        <option style={styles.option} value="per Week">per Week</option>
-        <option style={styles.option} value="per Month">per Month</option>
-        <option style={styles.option} value="per Year">per Year</option>
+      <select value={secondarySelect} onChange={(e)=>setSecondarySelect(e.target.value)} style={styles.select}>
+        <option style={styles.option} value='day'>per Day</option>
+        <option style={styles.option} value="week">per Week</option>
+        <option style={styles.option} value="mon">per Month</option>
+        <option style={styles.option} value="yr">per Year</option>
       </select>
     </div>
   )

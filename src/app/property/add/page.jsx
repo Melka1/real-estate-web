@@ -27,7 +27,15 @@ function page() {
     "A security guard is provided"
   ])
   const [addStatus, setAddStatus] = useState([true, true])
+
   const [images, setImages] = useState([])
+  const [name, setName] = useState("")
+  const [cost, setCost] = useState(null)
+  const [stateName, setStateName] = useState('')
+  const [city, setCity] = useState('')
+
+  const [primarySelect, setPrimarySelect] = useState(0)
+  const [secondarySelect, setSecondarySelect] = useState('mon')
 
   const input1 = useRef("")
   const input2 = useRef("")
@@ -109,7 +117,7 @@ function page() {
                   <p className='unit--information--title section--title'>Unit Information</p>
                   <div className='unit--information--content'>
                     <label htmlFor="unit--name">Unit name</label>
-                    <input type="text" id='unit--name' placeholder='Enter the name of the property'/>
+                    <input onChange={(e)=>setName(e.target.value)} type="text" id='unit--name' placeholder='Enter the name of the property'/>
                     <label htmlFor="unit--images">Unit image</label>
                     <Imperative setImages={setImages} images={images}/>
                   </div>
@@ -118,8 +126,8 @@ function page() {
                 <div className='unit--location'>
                   <p className='unit--location--title section--title'>Unit Location</p>
                   <div className='unit--location--content'>
-                    <label htmlFor="location--name">Unit name</label>
-                    <input type="text" id='location--name' placeholder='Enter the location of the property'/>
+                    <label htmlFor="location--name">Unit location name</label>
+                    <input onChange={(e)=>setCity(e.target.value)} type="text" id='location--name' placeholder='Enter the location of the property'/>
                     <div className='location--detail'>
                       <div className='unit--number'>
                         <label htmlFor="unit--number">Unit number</label>
@@ -131,7 +139,7 @@ function page() {
                       </div>
                       <div className='unit--state'>
                         <label htmlFor="unit--state">State</label>
-                        <input type="text" id='unit--state'/>
+                        <input onChange={(e)=>setStateName(e.target.value)} type="text" id='unit--state'/>
                       </div>
                     </div>
 
@@ -143,7 +151,7 @@ function page() {
                   <div className='price--and--duration--content'>
                     <div className='rental--cost'>
                       <label htmlFor="rental--cost">Rental Costs</label>
-                      <InputSelect/>
+                      <InputSelect setPrimarySelect={setPrimarySelect} primarySelect={primarySelect} setSecondarySelect={setSecondarySelect} secondarySelect={secondarySelect}/>
                     </div>
                     <div className='late--charge'>
                       <label htmlFor="late--charge">Late Charge <span>(Optional)</span></label>
@@ -245,19 +253,23 @@ function page() {
               <h2>Quick Preview</h2>
               <div className='preview--container'>
                 <div className='carousel--container'>
-                  {images&&<Carousel images={images}/>}
+                  {images?.length>0?<Carousel images={images}/>:(
+                    <div style={{width:'100%', height:'100%', display:'flex', alignItems:'center', justifyContent:'center'}}>
+                      <p>Your image goes here</p>
+                    </div>
+                  )}
                 </div>
                 <div className='preview--content--container'>
                   <div className='price--and--like'>
-                    <p>$550</p>
+                    <p>${primarySelect?primarySelect:'550'}/<span style={{fontSize:'1rem'}}>{secondarySelect?secondarySelect:'mon'}</span></p>
                     <div className='like--button'>
                       <AiOutlineHeart fontSize='1rem' color='red'/>
                     </div>
                   </div>
-                  <p className="name">Grand Citra Mansion</p>
+                  <p className="name">{name?name:'Grand Citra Mansion'}</p>
                   <div className="location--content">
                     <IoLocationSharp color='white'/>
-                    <p className="location--name">Surabaya, Indonesia</p>
+                    <p className="location--name">{city?city:'Surabaya'}, {stateName?stateName:'Indonesia'}</p>
                   </div>
                   <hr/>
                   <div className="property--description--detail">
